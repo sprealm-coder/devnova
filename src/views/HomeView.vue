@@ -1,5 +1,25 @@
 <template>
   <div class="home">
+    <!-- 旋转星球背景 -->
+    <div class="planet-container">
+      <div class="planet">
+        <div class="planet-surface">
+          <div class="bump b1"></div>
+          <div class="bump b2"></div>
+          <div class="bump b3"></div>
+          <div class="bump b4"></div>
+          <div class="bump b5"></div>
+          <div class="bump b6"></div>
+          <div class="bump b7"></div>
+          <div class="bump b8"></div>
+          <div class="bump b9"></div>
+          <div class="bump b10"></div>
+          <div class="bump b11"></div>
+          <div class="bump b12"></div>
+        </div>
+      </div>
+    </div>
+    
     <section class="hero">
       <div class="hero-content">
         <div class="badge"><span class="badge-dot"></span>收录 100+ 优质资源</div>
@@ -282,8 +302,68 @@ export default {
 </script>
 
 <style scoped>
-.home { min-height: 100vh; }
-.hero { padding: 4rem 2rem 3rem; text-align: center; }
+/* 旋转星球 */
+.planet-container {
+  position: fixed;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.planet {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EC4899 0%, #A855F7 50%, #6366F1 100%);
+  position: relative;
+  animation: rotate 60s linear infinite;
+  box-shadow: 
+    0 0 100px rgba(236, 72, 153, 0.5),
+    0 0 200px rgba(168, 85, 247, 0.3),
+    inset -50px -50px 100px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.planet-surface {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bump {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.b1 { width: 80px; height: 80px; top: 10%; left: 20%; }
+.b2 { width: 60px; height: 60px; top: 25%; left: 60%; }
+.b3 { width: 100px; height: 100px; top: 40%; left: 10%; }
+.b4 { width: 50px; height: 50px; top: 15%; left: 75%; }
+.b5 { width: 70px; height: 70px; top: 55%; left: 70%; }
+.b6 { width: 90px; height: 90px; top: 65%; left: 25%; }
+.b7 { width: 45px; height: 45px; top: 75%; left: 60%; }
+.b8 { width: 65px; height: 65px; top: 30%; left: 35%; }
+.b9 { width: 55px; height: 55px; top: 50%; left: 45%; }
+.b10 { width: 85px; height: 85px; top: 80%; left: 40%; }
+.b11 { width: 40px; height: 40px; top: 5%; left: 50%; }
+.b12 { width: 75px; height: 75px; top: 60%; left: 5%; }
+
+.home { min-height: 100vh; position: relative; }
+.hero { padding: 4rem 2rem 3rem; text-align: center; position: relative; z-index: 1; }
 .hero-content { max-width: 800px; margin: 0 auto; }
 .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3); border-radius: 9999px; color: #EC4899; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.5rem; }
 .badge-dot { width: 8px; height: 8px; background: #EC4899; border-radius: 50%; animation: pulse 2s infinite; }
