@@ -1,0 +1,19 @@
+{
+  "name": "devnova",
+  "version": "1.0.0",
+  "description": "开发者新星 - 技术资源导航平台",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.0",
+    "vite": "^6.2.0"
+  }
+}
